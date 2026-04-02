@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "langchain-agentlair"
+version = "0.1.0"
+description = "AgentLair identity, skills, and audit trail for LangChain agents"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "AgentLair", email = "team@agentlair.dev" }]
+keywords = ["langchain", "agentlair", "ai-agents", "agent-identity", "audit-trail"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "langchain>=0.2.0",
+    "langchain-core>=0.2.0",
+    "requests>=2.31.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+openai = ["langchain-openai>=0.1.0"]
+anthropic = ["langchain-anthropic>=0.1.0"]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "python-dotenv>=1.0",
+    "langchain-openai",
+]
+
+[project.urls]
+Homepage = "https://agentlair.dev"
+Repository = "https://github.com/piiiico/agentlair-langchain"
+"Bug Tracker" = "https://github.com/piiiico/agentlair-langchain/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["langchain_agentlair*"]
