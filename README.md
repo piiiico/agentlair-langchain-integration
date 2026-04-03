@@ -46,6 +46,11 @@ pip install langchain-agentlair langchain-openai
 pip install langchain-agentlair langchain-anthropic
 ```
 
+> **Note:** PyPI publication is in progress. Until then, install directly from GitHub:
+> ```bash
+> pip install https://github.com/piiiico/agentlair-langchain-integration/releases/download/v0.1.0/langchain_agentlair-0.1.0-py3-none-any.whl
+> ```
+
 ## Setup
 
 Get an AgentLair API key at [agentlair.dev](https://agentlair.dev).
