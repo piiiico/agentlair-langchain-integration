@@ -27,7 +27,13 @@ try:
     from langchain import hub  # type: ignore[attr-defined]
 except ImportError:
     hub = None  # type: ignore[assignment]
-from langchain.agents import AgentExecutor, create_react_agent
+try:
+    from langchain.agents import AgentExecutor, create_react_agent
+except ImportError:  # langchain>=1.0 moved the legacy executor to langchain-classic
+    try:
+        from langchain_classic.agents import AgentExecutor, create_react_agent
+    except ImportError:
+        AgentExecutor = create_react_agent = None  # tools + callbacks still work
 from langchain_core.language_models import BaseChatModel
 from langchain_core.tools import BaseTool
 
@@ -104,6 +110,12 @@ class AgentLairAgent:
                 "Question: {input}\n{agent_scratchpad}"
             )
 
+        if AgentExecutor is None:
+            raise ImportError(
+                "AgentLairAgent needs LangChain's legacy AgentExecutor. On langchain>=1.0, "
+                "run `pip install langchain-classic`, or use agentlair_tools() and "
+                "AgentLairCallbackHandler with your own agent."
+            )
         react_agent = create_react_agent(llm, tools, prompt)
         self.executor = AgentExecutor(
             agent=react_agent,

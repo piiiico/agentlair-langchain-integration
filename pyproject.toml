@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "langchain-agentlair"
-version = "0.1.0"
+version = "0.1.1"
 description = "AgentLair identity, skills, and audit trail for LangChain agents"
 readme = "README.md"
 license = { text = "MIT" }
@@ -40,8 +40,8 @@ dev = [
 
 [project.urls]
 Homepage = "https://agentlair.dev"
-Repository = "https://github.com/piiiico/agentlair-langchain"
-"Bug Tracker" = "https://github.com/piiiico/agentlair-langchain/issues"
+Repository = "https://github.com/piiiico/agentlair-langchain-integration"
+"Bug Tracker" = "https://github.com/piiiico/agentlair-langchain-integration/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

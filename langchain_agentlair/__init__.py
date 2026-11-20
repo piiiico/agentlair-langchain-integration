@@ -12,7 +12,7 @@ Quick start::
     )
     result = agent.run("Send a hello email to test@example.com")
 
-See https://github.com/piiiico/agentlair-langchain for full docs.
+See https://github.com/piiiico/agentlair-langchain-integration for full docs.
 """
 
 from .agent import AgentLairAgent
@@ -39,4 +39,4 @@ __all__ = [
     "LogObservationTool",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"

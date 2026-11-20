@@ -36,20 +36,16 @@ AgentLair provides the stateful identity layer:
 
 ## Installation
 
+Not on PyPI yet, so install from GitHub:
+
 ```bash
-pip install langchain-agentlair
+pip install "git+https://github.com/piiiico/agentlair-langchain-integration.git"
 
-# With OpenAI
-pip install langchain-agentlair langchain-openai
-
-# With Anthropic
-pip install langchain-agentlair langchain-anthropic
+# AgentLairAgent on langchain>=1.0 also needs the legacy executor
+pip install langchain-classic
 ```
 
-> **Note:** PyPI publication is in progress. Until then, install directly from GitHub:
-> ```bash
-> pip install https://github.com/piiiico/agentlair-langchain-integration/releases/download/v0.1.0/langchain_agentlair-0.1.0-py3-none-any.whl
-> ```
+The tools (`agentlair_tools`) and `AgentLairCallbackHandler` work on plain `langchain-core`.
 
 ## Setup
 
@@ -149,8 +145,8 @@ for tool in tools:
 ## Running the demo
 
 ```bash
-git clone https://github.com/piiiico/agentlair-langchain
-cd agentlair-langchain
+git clone https://github.com/piiiico/agentlair-langchain-integration
+cd agentlair-langchain-integration
 pip install -e ".[dev]"
 
 export AGENTLAIR_API_KEY=al_live_...
